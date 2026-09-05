@@ -46,6 +46,22 @@
                         <span>300</span>
                     </div>
                 </div>
+<!-- Volume Control -->
+<div style="width: 100%; padding: 20px; margin-top: 10px; border: 2px solid #1db954;">
+    <label for="volumeSlider" style="color: white; display: block; margin-bottom: 10px;">
+        🔊 Volume
+    </label>
+
+    <input 
+        type="range"
+        id="volumeSlider"
+        min="0"
+        max="100"
+        value="50"
+        style="width: 100%; display: block;"
+    >
+</div>
+
 
                 <!-- Increase/Decrease Buttons -->
                 <div class="button-group">
@@ -56,8 +72,12 @@
                     <button class="btn btn-small" id="increaseBtn" aria-label="Increase BPM">
                         <span class="btn-text">+</span>
                     </button>
-                </div>
+                </div> 
             </div>
+            <button class="btn btn-primary" id="resetBtn">
+    Reset BPM
+</button>
+
 
             <!-- Beat Counter -->
             <div class="beat-counter">

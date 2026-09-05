@@ -28,6 +28,7 @@ class Metronome {
         this.startStopBtn = document.getElementById('startStopBtn');
         this.increaseBtn = document.getElementById('increaseBtn');
         this.decreaseBtn = document.getElementById('decreaseBtn');
+        this.resetBtn = document.getElementById('resetBtn');
         this.beatIndicator = document.getElementById('beatIndicator');
         this.beatNumber = document.getElementById('beatNumber');
         
@@ -61,6 +62,10 @@ class Metronome {
         this.bpmSlider.addEventListener('input', (e) => this.setBPM(parseInt(e.target.value)));
         this.increaseBtn.addEventListener('click', () => this.adjustBPM(5));
         this.decreaseBtn.addEventListener('click', () => this.adjustBPM(-5));
+        if (this.resetBtn) {
+        this.resetBtn.addEventListener('click', () => this.setBPM(120));
+    }
+
         
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => {
@@ -217,6 +222,12 @@ class Metronome {
         void this.beatIndicator.offsetWidth;
         this.beatIndicator.classList.add('active');
         this.updateBeatDisplay();
+        this.beatNumber.classList.add('flash');
+
+setTimeout(() => {
+    this.beatNumber.classList.remove('flash');
+}, 300);
+
     }
 
     /**
@@ -255,4 +266,16 @@ class Metronome {
 // Initialize the metronome when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     new Metronome();
+
+    // Volume control
+    const volumeSlider = document.getElementById("volumeSlider");
+
+if (volumeSlider) {
+    volumeSlider.addEventListener("input", function () {
+        console.log("Volume:", this.value);
+    });
+}
+
 });
+
+
