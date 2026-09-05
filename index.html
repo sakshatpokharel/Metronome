@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeatBox - Music Metronome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">BeatBox</h1>
+            <p class="subtitle">Your Personal Metronome</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Beat Indicator -->
+            <div class="beat-indicator" id="beatIndicator"></div>
+
+            <!-- BPM Display Section -->
+            <div class="bpm-section">
+                <div class="bpm-display-wrapper">
+                    <div class="bpm-label">BPM</div>
+                    <div class="bpm-display" id="bpmDisplay">120</div>
+                </div>
+            </div>
+
+            <!-- Controls Section -->
+            <div class="controls-section">
+                <!-- BPM Slider -->
+                <div class="slider-wrapper">
+                    <label for="bpmSlider" class="slider-label">Adjust Tempo</label>
+                    <input 
+                        type="range" 
+                        id="bpmSlider" 
+                        class="bpm-slider" 
+                        min="40" 
+                        max="240" 
+                        value="120"
+                        aria-label="BPM Slider"
+                    >
+                    <div class="slider-range">
+                        <span>40</span>
+                        <span>240</span>
+                    </div>
+                </div>
+
+                <!-- Increase/Decrease Buttons -->
+                <div class="button-group">
+                    <button class="btn btn-small" id="decreaseBtn" aria-label="Decrease BPM">
+                        <span class="btn-text">-</span>
+                    </button>
+                    <div class="bpm-display-mini" id="bpmDisplayMini">120</div>
+                    <button class="btn btn-small" id="increaseBtn" aria-label="Increase BPM">
+                        <span class="btn-text">+</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Beat Counter -->
+            <div class="beat-counter">
+                <div class="beat-text">Beat</div>
+                <div class="beat-number" id="beatNumber">1</div>
+            </div>
+
+            <!-- Start/Stop Button -->
+            <button class="btn btn-primary" id="startStopBtn" aria-label="Start metronome">
+                <span class="btn-icon">▶</span>
+                <span class="btn-label">Start</span>
+            </button>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Click to practice • Tap along with the beat</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
