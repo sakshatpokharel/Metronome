@@ -54,7 +54,7 @@ class Metronome {
     }
 
     /**
-     * Attach event listeners to DOM elements
+     * Attached event listeners to DOM elements
      */
     attachEventListeners() {
         this.startStopBtn.addEventListener('click', () => this.toggleMetronome());
@@ -148,7 +148,7 @@ class Metronome {
     /**
      * Schedule a beat to play at the specified time
      */
-    scheduleNoteOn(time, beat) {
+    scheduleNoteOn (time, beat) {
         if (beat !== this.lastScheduledBeat) {
             this.lastScheduledBeat = beat;
             
@@ -227,10 +227,10 @@ class Metronome {
     }
 
     /**
-     * Set BPM to specific value
+     * kept BPM to specific value...
      */
     setBPM(value) {
-        value = Math.max(40, Math.min(240, value));
+        value = Math.max(20, Math.min(300, value));
         this.bpm = value;
         this.updateDisplay();
     }
